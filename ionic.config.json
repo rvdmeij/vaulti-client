@@ -1,0 +1,7 @@
+{
+  "name": "vaulti",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
