@@ -13,6 +13,9 @@ export default defineComponent({
   components: {
     IonApp,
     IonRouterOutlet
+  },
+  setup () {
+    console.log('App setup initialized.');
   }
 });
 </script>

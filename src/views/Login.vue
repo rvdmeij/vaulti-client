@@ -32,11 +32,11 @@
               type="password"
             ></ion-input>
           </ion-item>
-          <ion-item>
-              <ion-router-link href="/res/dashboard">
-                <ion-button>Login</ion-button>
-              </ion-router-link>
-          </ion-item>
+          <ion-button @click="$router.push('/res/dashboard')">
+            <ion-label>
+              Login
+            </ion-label>
+          </ion-button>
         </ion-list>
       </form>
     </ion-content>
@@ -44,13 +44,13 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonList, IonItem, IonLabel } from '@ionic/vue';
+import { IonButton, IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonList, IonItem, IonLabel } from '@ionic/vue';
 import { lockOpen, cog, speedometer, logOut } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Login',
-  components: { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonList, IonItem, IonLabel },
+  components: { IonButton, IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonList, IonItem, IonLabel },
   setup() {
     return {
       cog, logOut, lockOpen, speedometer,

@@ -2,28 +2,24 @@
   <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar slot="bottom">
+      <ion-tab-bar>
         <ion-tab-button tab="dashboard" href="/res/dashboard">
           <ion-icon :icon="speedometer" />
           <ion-label>Dashboard</ion-label>
         </ion-tab-button>
-          
         <ion-tab-button tab="vault" href="/res/vault">
           <ion-icon :icon="lockOpen" />
           <ion-label>Vault</ion-label>
         </ion-tab-button>
-        
         <ion-tab-button tab="settings" href="/res/settings">
           <ion-icon :icon="cog" />
           <ion-label>Settings</ion-label>
         </ion-tab-button>
-
         <ion-tab-button tab="logout" href="/res/logout">
           <ion-icon :icon="logOut" />
           <ion-label>Sign-off</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-  
     </ion-tabs>
   </ion-page>
 </template>

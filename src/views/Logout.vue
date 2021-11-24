@@ -11,18 +11,21 @@
           <ion-title size="large">Sign-off?</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-router-link href="/res/login">
-        <ion-button>Sign-off</ion-button>
-      </ion-router-link>
+      <ion-button @click="$router.push('/res/login')">
+        <ion-label>
+          Logout
+        </ion-label>
+      </ion-button>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLabel } from '@ionic/vue';
+
 
 export default  {
   name: 'Logout',
-  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButton, IonLabel }
 }
 </script>
