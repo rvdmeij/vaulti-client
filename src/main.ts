@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 import { store, key } from './store/store';
+import http from '@/utils/Http';
+import { AxiosKey } from '@/symbols';
 
 import { IonicVue } from '@ionic/vue';
 
@@ -28,6 +30,7 @@ const app = createApp(App)
   .use(IonicVue)
   .use(router);
 
+app.provide(AxiosKey, http)
 app.use(store, key);
   
 router.isReady().then(() => {

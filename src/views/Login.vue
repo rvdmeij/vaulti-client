@@ -14,12 +14,13 @@
       <form>
         <ion-list>
           <ion-item>
-            <ion-label position="stacked" color="primary">Username</ion-label>
+            <ion-label position="stacked" color="primary">Email</ion-label>
             <ion-input
-              name="username"
+              name="email"
               type="text"
               spellcheck="false"
               autocapitalize="off"
+              v-model="email"
             ></ion-input>
           </ion-item>
           <span
@@ -30,9 +31,10 @@
             <ion-input
               name="password"
               type="password"
+              v-model="password"
             ></ion-input>
           </ion-item>
-          <ion-button @click="$router.push('/res/dashboard')">
+          <ion-button @click="login">
             <ion-label>
               Login
             </ion-label>
@@ -46,7 +48,8 @@
 <script lang="ts">
 import { IonButton, IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonList, IonItem, IonLabel } from '@ionic/vue';
 import { lockOpen, cog, speedometer, logOut } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
+import apiClient from '@/utils/Http';
 
 export default defineComponent({
   name: 'Login',
@@ -54,6 +57,31 @@ export default defineComponent({
   setup() {
     return {
       cog, logOut, lockOpen, speedometer,
+    }
+  },
+  data() {
+    return {
+      email: null,
+      password: null,
+    }
+  },
+  methods: {
+    validate() {
+      return (this.email !== null || this.password !== null);
+    },
+    async login() {
+      if (this.validate()) {
+        const  response = await apiClient.post('/login', {
+          email: this.email,
+          password: this.password
+        });
+        if (response.status == 200) {
+          window.localStorage.setItem('token', response.data.access_token);
+          this.$router.push({name: 'Dashboard'});
+        }
+      } else {
+        console.log('Please enter your credentials.');
+      }
     }
   }
 });

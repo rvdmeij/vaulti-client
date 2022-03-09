@@ -5,7 +5,8 @@ import Main from '../views/Main.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/res/dashboard'
+    redirect: '/res/dashboard',
+    name: 'Dashboard',
   },
   {
     name: 'Login',
