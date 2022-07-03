@@ -1,9 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 
-let token = '0';
-if (window.localStorage.getItem('token')) {
-  //  token = window.localStorage.getItem('token') ?? '0'
-  token = "0";
+let token = null;
+const ls = window.localStorage;
+if (ls.getItem('token')) {
+  token = ls.getItem('token') ?? '0';
 }
 
 const apiClient: AxiosInstance = axios.create({
