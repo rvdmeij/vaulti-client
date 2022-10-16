@@ -48,11 +48,11 @@
 <script lang="ts">
 import { IonButton, IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonList, IonItem, IonLabel } from '@ionic/vue';
 import { lockOpen, cog, speedometer, logOut } from 'ionicons/icons';
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 import apiClient from '@/utils/Http';
 
 export default defineComponent({
-  name: 'Login',
+  name: 'LoginView',
   components: { IonButton, IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonInput, IonList, IonItem, IonLabel },
   setup() {
     return {

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Main from '../views/Main.vue'
+import MainView from '../views/MainView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,16 +11,16 @@ const routes: Array<RouteRecordRaw> = [
   {
     name: 'Login',
     path: '/res/login',
-    component: () => import('@/views/Login.vue')
+    component: () => import('@/views/LoginView.vue')
   },
   {
     name: 'Register',
     path: '/res/register',
-    component: () => import('@/views/Register.vue')
+    component: () => import('@/views/RegisterView.vue')
   },
   {
     path: '/res/',
-    component: Main,
+    component: MainView,
     children: [
       {
         path: '',
@@ -28,19 +28,19 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'dashboard',
-        component: () => import('@/views/Dashboard.vue')
+        component: () => import('@/views/DashboardView.vue')
       },
       {
         path: 'vault',
-        component: () => import('@/views/Vault.vue')
+        component: () => import('@/views/VaultView.vue')
       },
       {
         path: 'settings',
-        component: () => import('@/views/Settings.vue')
+        component: () => import('@/views/SettingsView.vue')
       },
       {
         path: 'logout',
-        component: () => import('@/views/Logout.vue')
+        component: () => import('@/views/LogoutView.vue')
       }
     ]
   }

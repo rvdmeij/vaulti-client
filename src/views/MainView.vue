@@ -30,7 +30,7 @@ import { lockOpen, cog, speedometer, logOut } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Main',
+  name: 'MainView',
   components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
   setup() {
     return {

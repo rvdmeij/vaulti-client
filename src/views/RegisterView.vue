@@ -22,7 +22,7 @@ import { lockOpen, cog, speedometer, logOut } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Register',
+  name: 'RegisterView',
   components: { IonPage, IonHeader, IonToolbar, IonContent, IonTitle },
   setup() {
     return {

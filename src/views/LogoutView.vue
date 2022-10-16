@@ -25,7 +25,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonLab
 
 
 export default  {
-  name: 'Logout',
+  name: 'LogoutView',
   components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButton, IonLabel }
 }
 </script>
